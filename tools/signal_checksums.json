@@ -1,0 +1,131 @@
+{
+  "carrier_hz": 38000,
+  "source_apks_sha256": "b0c4e9323a4fc284c48140ad8fe924239d79808765563f3cbc5655e4da6ca37f",
+  "patterns": {
+    "power": {
+      "count": 72,
+      "duration_us": 219768,
+      "sha256": "9d1126ccaf0b9d3801033fe88274a1d39a261fc3f67da2ac3478bcd0742ab3ce"
+    },
+    "input": {
+      "count": 72,
+      "duration_us": 219857,
+      "sha256": "4810810a596ae378f8f043f2ffc572a5c99f2525a73d406d87bdc9c831a5227b"
+    },
+    "menu": {
+      "count": 72,
+      "duration_us": 219861,
+      "sha256": "6cdd75415382acb2138b6e93066accc9a67716229d0b4d59998b056373cdd9ab"
+    },
+    "mute": {
+      "count": 72,
+      "duration_us": 219817,
+      "sha256": "2f701143330ab1c9fc29f443c453caa27fdf81b62be6e5cd121fefa40e886c88"
+    },
+    "back": {
+      "count": 72,
+      "duration_us": 219793,
+      "sha256": "3d8f6972885e319d2e69bba1472982c83dd63790bbc6a76f918fb0b45e3a6195"
+    },
+    "home": {
+      "count": 72,
+      "duration_us": 219771,
+      "sha256": "ac1015eb14cf637ed19add04d3c2d7dc29b89b0800194417fc41a2e9e0c35e1f"
+    },
+    "channel_up": {
+      "count": 68,
+      "duration_us": 164811,
+      "sha256": "9c04af7b5b8ccf098d8a926de7df6079f233b1e716f6200edcc3b8c18672a207"
+    },
+    "channel_down": {
+      "count": 72,
+      "duration_us": 219870,
+      "sha256": "1841c2c7d8689d2c28828da260c98ed007be6778fcb5e34c0218d1700f1f7cbb"
+    },
+    "volume_up": {
+      "count": 72,
+      "duration_us": 220067,
+      "sha256": "262a00280fd93ffc97db22222c9b44969e22effbb3b59154aea785c2b7c48054"
+    },
+    "volume_down": {
+      "count": 68,
+      "duration_us": 164722,
+      "sha256": "0f69d812967ef3e8904d1d631e13d7c634d41ddc8b68e30a6a047d8cd4578429"
+    },
+    "up": {
+      "count": 72,
+      "duration_us": 219822,
+      "sha256": "67d8aac0b3c4b9c673a076715184f41a8575e3e953ada9697cda43d26ea56b8a"
+    },
+    "down": {
+      "count": 72,
+      "duration_us": 219842,
+      "sha256": "6f54a8b38528e911a3c7f77af6be740ef98e0ede490e8916c3664ab3f73702df"
+    },
+    "right": {
+      "count": 72,
+      "duration_us": 219787,
+      "sha256": "4dc1674b3e47144b23c60a7fa06b905d8331db3a769f67043cef04a36067405a"
+    },
+    "left": {
+      "count": 72,
+      "duration_us": 219853,
+      "sha256": "ef1ec25ba3621477a14dfe20f326fafea800bec17e831d3b94eeb3df762f0e0c"
+    },
+    "ok": {
+      "count": 68,
+      "duration_us": 164765,
+      "sha256": "be45b4698a276f57f4759dc4121ed8be982bd236981408b8dc13e0160b5247dd"
+    },
+    "1": {
+      "count": 68,
+      "duration_us": 164786,
+      "sha256": "b7b7668df5585904aefc714f755af602c32dab0b6f3fe05a3642c191ce95768b"
+    },
+    "2": {
+      "count": 72,
+      "duration_us": 219850,
+      "sha256": "4477bd842a96fe88d24cfe4deee2cb896154addf23df54ac748fce31094f0718"
+    },
+    "3": {
+      "count": 72,
+      "duration_us": 219847,
+      "sha256": "03b119084839d2b0a04db5274991c560212c1e763fbbdc5934ff2786f6e5483f"
+    },
+    "4": {
+      "count": 68,
+      "duration_us": 164707,
+      "sha256": "94489940e6567fe306eb0ef28a5548015e2e42bc0f1f824a9a69d9a7453ae824"
+    },
+    "5": {
+      "count": 68,
+      "duration_us": 164796,
+      "sha256": "7883ebd097601ce91bc53bfa7ac1f77c52492bd56175fc09880873f58c121b18"
+    },
+    "6": {
+      "count": 72,
+      "duration_us": 219826,
+      "sha256": "8b58e2f86358b276c1f85703b20c9dfcefd8fed8049eff41135f4b56685fa8a6"
+    },
+    "7": {
+      "count": 72,
+      "duration_us": 219808,
+      "sha256": "40572845647d173fecb561052f3e48c58a9f8d6d45c7244815b285d8d945a38f"
+    },
+    "8": {
+      "count": 72,
+      "duration_us": 219804,
+      "sha256": "568dae05069ede103a632d2cae068b6477341ce73ed1f8d200059a289b18d6d0"
+    },
+    "9": {
+      "count": 68,
+      "duration_us": 164737,
+      "sha256": "c489184e7320bd22633405e0f859eb17afdbadb980e07450d6a77fff7c8181bf"
+    },
+    "0": {
+      "count": 72,
+      "duration_us": 219832,
+      "sha256": "6e20271a0344e7aa596dacc361dd8de2e181092af0847c14882656a10543be12"
+    }
+  }
+}

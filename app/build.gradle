@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'dev.siam.quietremote'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'dev.siam.quietremote'
+        minSdk 26
+        targetSdk 35
+        versionCode 3
+        versionName '1.0.2'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    signingConfigs {
+        development {
+            storeFile rootProject.file('development-signing/quiet-remote-debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    buildTypes { debug { signingConfig signingConfigs.development } }
+}
