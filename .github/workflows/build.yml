@@ -1,4 +1,7 @@
-name: Build Android APK
+name: Build and release Android APK
+concurrency:
+  group: quiet-remote-${{ github.ref }}
+  cancel-in-progress: false
 on:
   push:
     branches: [main]
@@ -18,6 +21,7 @@ jobs:
       - name: Verify IR signals
         run: |
           python3 tools/check_signals.py
+          python3 tools/check_release.py
           mkdir -p build/selfcheck
           javac -d build/selfcheck app/src/main/java/dev/siam/quietremote/Wrc03.java tools/SignalSelfTest.java
           java -cp build/selfcheck SignalSelfTest
@@ -33,3 +37,20 @@ jobs:
           name: Quiet-Remote-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+  release:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Quiet-Remote-APK
+          path: build/download
+      - name: Publish stable APK
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash tools/publish_stable.sh build/download/app-debug.apk

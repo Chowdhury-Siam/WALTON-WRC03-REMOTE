@@ -202,7 +202,7 @@ public final class MainActivity extends Activity {
                                 + "WRC03 profile for Walton WD1-JX32-SY200. This app runs entirely offline. "
                                 + "IR is one-way: it cannot read the TV's power or volume state.\n\n"
                                 + "Settings, Guide, Info and dash had no usable WRC03 signals in the reference app. "
-                                + "Use Menu to access your TV settings.\n\nVersion 1.0.4 · Independent app")
+                                + "Use Menu to access your TV settings.\n\nVersion 1.0.5 · Independent app")
                         .setPositiveButton("Done", null).show())
                 .setPositiveButton("Done", null).show();
     }

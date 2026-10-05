@@ -1,11 +1,11 @@
-# Quiet Remote 1.0.4
+# Quiet Remote 1.0.5
 
 A lightweight, ad-free, offline Android IR remote for Walton WRC03.
 Built for a Redmi Note 10 Pro controlling a Walton WD1-JX32-SY200.
 
 ## Install and test
 
-Install the accompanying `Quiet-Remote-1.0.4.apk` on your phone. If Android
+Install the accompanying `Quiet-Remote-1.0.5.apk` on your phone. If Android
 asks, allow installation from the app opening the APK. The package is
 `dev.siam.quietremote`, so it installs alongside your existing remote.
 
@@ -36,8 +36,17 @@ java -cp build/selfcheck SignalSelfTest
 ```
 
 On Windows use `gradlew.bat assembleDebug`. The standard debug build produces
-`app/build/outputs/apk/debug/app-debug.apk`. A GitHub Actions workflow builds
-and uploads a debug APK artifact when you push to `main` or run it manually.
+`app/build/outputs/apk/debug/app-debug.apk`. GitHub Actions runs signal checks,
+release-script checks, compilation and lint when you push to `main` or run it manually.
+Successful builds on `main` automatically create or update **Quiet Remote Stable**
+in GitHub Releases, with tag `stable` and asset `Quiet-Remote.apk`. The release is
+published as the latest normal release. Its tag follows the built commit, and the
+APK replaces the previous asset. The workflow uses GitHub's automatic token;
+no additional secret is needed. Builds on other branches only upload an artifact.
+Concurrent runs are serialized; reruns of older commits skip stable publication.
+
+Run `python3 tools/check_release.py` to test publication logic locally without
+contacting GitHub. Push these files to `main` to enable the automatic release.
 
 The accompanying APK is a development build. Its development signing key
 is preserved in `development-signing/` so future personal test builds can
@@ -46,8 +55,14 @@ private production key. The Gradle debug build uses this same key. For public
 distribution, create your own private release key and keep it outside the
 source repository.
 
+## Changes in 1.0.5
+
+- Remove the redundant API 27 navigation-bar theme setting so lint accepts Android 8.0 support.
+- Keep lint and automatic stable APK publication enabled.
+
 ## Changes in 1.0.4
 
+- Successful main builds automatically publish the APK to the rolling stable GitHub release.
 - CI SDK setup explicitly installs Android 35 packages, avoiding the removed `tools` package.
 - Measure the smaller navigation pad before its buttons, fixing shifted arrows and clipped OK text.
 - The pad keeps its compact size and bottom-center position.
