@@ -22,6 +22,8 @@ jobs:
           javac -d build/selfcheck app/src/main/java/dev/siam/quietremote/Wrc03.java tools/SignalSelfTest.java
           java -cp build/selfcheck SignalSelfTest
       - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
       - name: Build and lint
         run: |
           chmod +x gradlew

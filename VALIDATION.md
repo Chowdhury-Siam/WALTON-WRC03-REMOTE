@@ -20,6 +20,12 @@ A physical phone/TV test and Android UI/emulator run have not been performed.
 The Gradle workflow and lint task were supplied but not executed locally;
 the APK was compiled with ECJ, AAPT2, D8 and APKSigner from Android Build Tools 35.0.0.
 
+CI-only correction: SDK setup now requests platform-tools, platforms;android-35
+and build-tools;35.0.0 instead of the action's default list containing the
+removed tools package. Workflow YAML and package configuration were checked
+locally. A new GitHub Actions run has not been performed. App version and APK
+are unchanged.
+
 APK bytes: 25219
 
 APK SHA-256: `fd4ab9c6b04a06faf3729b774bb0210f0f38e0e72b628f36b0ee4c5d807d2f92`

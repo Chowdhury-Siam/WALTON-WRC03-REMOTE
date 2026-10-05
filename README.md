@@ -48,6 +48,7 @@ source repository.
 
 ## Changes in 1.0.4
 
+- CI SDK setup explicitly installs Android 35 packages, avoiding the removed `tools` package.
 - Measure the smaller navigation pad before its buttons, fixing shifted arrows and clipped OK text.
 - The pad keeps its compact size and bottom-center position.
 
