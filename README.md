@@ -1,11 +1,11 @@
-# Quiet Remote 1.0.2
+# Quiet Remote 1.0.3
 
 A lightweight, ad-free, offline Android IR remote for Walton WRC03.
 Built for a Redmi Note 10 Pro controlling a Walton WD1-JX32-SY200.
 
 ## Install and test
 
-Install the accompanying `Quiet-Remote-1.0.2.apk` on your phone. If Android
+Install the accompanying `Quiet-Remote-1.0.3.apk` on your phone. If Android
 asks, allow installation from the app opening the APK. The package is
 `dev.siam.quietremote`, so it installs alongside your existing remote.
 
@@ -45,6 +45,11 @@ update the installation without uninstalling. It is intentionally not a
 private production key. The Gradle debug build uses this same key. For public
 distribution, create your own private release key and keep it outside the
 source repository.
+
+## Changes in 1.0.3
+
+- Smaller arrow and OK buttons form a compact square pad at the bottom of their panel.
+- The pad fits within available window space and keeps controls closer for one-hand use.
 
 ## Changes in 1.0.2
 

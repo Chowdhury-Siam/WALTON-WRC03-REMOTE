@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.WindowInsets;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ViewFlipper;
 import android.widget.TextView;
@@ -125,7 +126,18 @@ public final class MainActivity extends Activity {
         addDirectionRow(navigation, new String[]{null, "up", null}, new String[]{"", "▲", ""});
         addDirectionRow(navigation, new String[]{"left", "ok", "right"}, new String[]{"◀", "OK", "▶"});
         addDirectionRow(navigation, new String[]{null, "down", null}, new String[]{"", "▼", ""});
-        pages.addView(navigation, new android.widget.FrameLayout.LayoutParams(-1, -1));
+        // Keep the five controls close together at thumb height. Clamp to the
+        // actual page bounds as well, so shorter windows still fit without scrolling.
+        FrameLayout navigationPage = new FrameLayout(this) {
+            @Override protected void onSizeChanged(int width, int height, int oldWidth, int oldHeight) {
+                super.onSizeChanged(width, height, oldWidth, oldHeight);
+                int side = Math.min(dp(252), Math.min(width, height));
+                navigation.setLayoutParams(new FrameLayout.LayoutParams(side, side,
+                        Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL));
+            }
+        };
+        navigationPage.addView(navigation, new FrameLayout.LayoutParams(-1, -1));
+        pages.addView(navigationPage, new FrameLayout.LayoutParams(-1, -1));
         LinearLayout numbers = column();
         for (int i = 1; i <= 7; i += 3) {
             String[] keys = {String.valueOf(i), String.valueOf(i + 1), String.valueOf(i + 2)};
@@ -185,7 +197,7 @@ public final class MainActivity extends Activity {
                                 + "WRC03 profile for Walton WD1-JX32-SY200. This app runs entirely offline. "
                                 + "IR is one-way: it cannot read the TV's power or volume state.\n\n"
                                 + "Settings, Guide, Info and dash had no usable WRC03 signals in the reference app. "
-                                + "Use Menu to access your TV settings.\n\nVersion 1.0.2 · Independent app")
+                                + "Use Menu to access your TV settings.\n\nVersion 1.0.3 · Independent app")
                         .setPositiveButton("Done", null).show())
                 .setPositiveButton("Done", null).show();
     }
